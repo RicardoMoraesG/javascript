@@ -1,0 +1,52 @@
+nav {
+    position: fixed;
+    width   : 100%;
+    z-index : 10;
+}
+
+.nav_large {
+    background: green;
+    color     : white;
+    height    : 100;
+    position  : fixed;
+    width     : 100%;
+    z-index   : 10;
+}
+
+.nav_small {
+    background: rosybrown;
+    color     : black;
+    height    : 60;
+    width     : max-content;
+    position  : fixed;
+    width     : 100%;
+    z-index   : 10;
+    transition: ease-in;
+}
+
+body {
+    background: rgb(59, 145, 185);
+    font      : normal 15pt arial;
+}
+
+header {
+    color     : white;
+    text-align: center;
+}
+
+section {
+    background   : white;
+    border-radius: 10px;
+    padding      : 15px;
+    width        : 500px;
+    margin       : auto;
+    margin-top   : 20;
+    box-shadow   : 3px 3px 10px rgba(0, 0, 0, 0.349);
+    text-align   : left;
+}
+
+footer {
+    font-style: italic;
+    color     : white;
+    text-align: center;
+}

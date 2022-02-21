@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        h1 {
+            color: white
+        }
+
+        body {
+            background-color: rgb(26, 122, 122);
+            color: white;
+            font: 18pt roboto;
+        }
+    </style>
+</head>
+
+<body id="corpo">
+    <nav id="nav">
+        logo
+        <menu id="menu">
+            <ul id="ul">
+                <li id="li">
+                    sobre
+                </li>
+                <li>
+                    mais
+                </li>
+            </ul>
+        </menu>
+    </nav>
+    <h1 id="ttl1">Iniciando os estudos com DOM</h1>
+    <h2 id="ttl2">Título dois</h2>
+    <p id="pr1">Aqui vai o resultado: </p>
+    <p id="pr2">Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <div id="msg"><strong>Clique</strong></div>
+
+    <script>
+        let t1 = window.document.querySelector('h1#ttl1')
+        t1.style.color = 'blue'
+
+
+
+        let navTop = window.document.getElementById('nav')
+        navTop.style.background = 'white'
+        navTop.style.color = 'blue'
+        let menu1 = window.document.getElementById('menu')
+        menu1.style.background = 'grey'
+        let uls = window.document.getElementById('ul')
+        uls.style.color = 'black'
+        window.document.getElementById('ttl2').innerText = 'ola'
+
+        let p1 = window.document.getElementsByTagName('p')[0]
+        p1.style.color = 'black'
+        p1.style.background = 'white'
+        let p2 = window.document.getElementsByTagName('p')[1]
+        p2.style.background = 'orange'
+        p2.style.background = 'black'
+        let titulo1 = window.document.getElementsByTagName('h1')[0]
+        titulo1.style.color = 'black'
+        titulo1.style.background = 'cyan'
+        let titulo2 = window.document.getElementsByTagName('h2')[0]
+        titulo2.style.color = 'cyan'
+        titulo2.style.background = 'black'
+        let botao = window.document.getElementsByTagName('div')[0]
+        botao.style.color = 'red'
+        botao.style.background = 'white'
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

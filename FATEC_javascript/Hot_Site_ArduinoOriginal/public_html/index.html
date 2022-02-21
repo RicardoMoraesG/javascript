@@ -1,0 +1,292 @@
+<!DOCTYPE html-5>
+<html>
+    <head>
+        <title>Hotsite Arduíno</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="resources/materialize_css/materialize.min.css" >
+        <link type="text/css" rel="stylesheet" href="resources/css_3w/index.css">
+        <link rel="shortcut icon" href="resources/img/favicon-fatec.jpg" />
+    </head>
+    <body>
+        <div id="nav-roll">
+            <nav class="pushpin-nav pin-top z_1" data-target="nav-roll">
+                <div class="row cyan darken-2">
+                    <!-- LOGO rolagem -->
+                    <div class="col s12 m2"> 
+                        <div id="logo" class="center-align hide-on-med-and-down col s12 m2">
+                            <img src="https://content.arduino.cc/brand/arduino_compressed-white.svg" height="50" width="60" alt="menu logo arduino branco"/>
+                        </div>
+                    </div>
+                    <div class="col s12 m10">
+                        <ul class="right hide-on-med-and-down">                        
+                            <li><a href="https://www.arduino.cc/" target="_blank"><i class="material-icons left">compare</i>Template de Referência</a></li>
+                            <li><a href="manual_.html" target="_blank"><i class="material-icons left">import_contacts</i>Manual</a></li>
+                            <li><a href="#modal_autor" class="modal-trigger"><i class="material-icons left">contact_mail</i>Autor</a></li>
+                        </ul>        
+                        <!-- LOGO PEQUENO: mobile -->
+                        <div  id="logo">
+                            <a href="#" data-target="sidenav-mobile" class="sidenav-trigger hide-on-large-only hoverable">
+                                <img src="https://content.arduino.cc/brand/arduino_compressed-white.svg" height="50" width="60" alt="menu logo arduino branco"/>
+                            </a>
+                        </div>
+                        <!-- -->
+                        <div>
+                            <ul>
+                                <li><a class="dropdown-trigger" data-target="drop-projetos">Projetos<i class="material-icons right">art_track</i></a></li>
+                                <li><a class="dropdown-trigger" data-target="drop-cursos">Cursos<i class="material-icons right">library_books</i></a></li> 
+                                <li><a class="dropdown-trigger" data-target="drop-videos">YouTube<i class="material-icons right">video_library</i></a></li>  
+                            </ul> 
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <nav class="nav nav_sticky">
+            <div class="row cyan darken-2">                
+                <!-- LOGO GRANDE: -->
+                <div class="col m1">
+                    <div  id="logo" class="center-align hide-on-med-and-down">
+                        <img src="https://content.arduino.cc/brand/arduino-white.svg" height="100" width="150" alt="logo arduino branco"/>
+                    </div>
+                </div>
+                <!--LOGO PEQUENO: mobile -->
+                <div class="col s1 m2">
+                    <a href="#" data-target="sidenav-mobile" class="sidenav-trigger hide-on-large-only hoverable">
+                        <img src="https://content.arduino.cc/brand/arduino_compressed-white.svg" height="50" width="60" alt="menu logo arduino branco"/>
+                    </a>
+                </div>                
+                <div>                      
+                    <ul class="right hide-on-med-and-down">                        
+                        <li><a href="https://www.arduino.cc/" target="_blank"><i class="material-icons left">compare</i>Template de Referência</a></li>
+                        <li><a href="manual_.html" target="_blank"><i class="material-icons left">import_contacts</i>Manual</a></li>
+                        <li><a href="#modal_autor" class="modal-trigger"><i class="material-icons left">contact_mail</i>Autor</a></li>
+                    </ul>                    
+                    <div>
+                        <ul class="col s10 m8 right">
+                            <li><a href="#" class="dropdown-trigger" data-target="drop-projetos">Projetos<i class="material-icons right">art_track</i></a></li>
+                            <li><a href="#" class="dropdown-trigger" data-target="drop-cursos">Cursos<i class="material-icons right">library_books</i></a></li> 
+                            <li><a href="#" class="dropdown-trigger" data-target="drop-videos">YouTube<i class="material-icons right">video_library</i></a></li>  
+                        </ul> 
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- fim NAVBAR -->
+
+        <!--CONTEÚDO CENTRAL -->
+        <div class="row" style="width: 90%;">            
+            <div class="row">
+                <div class="card-content col s12 m6 l4">                
+                    <div class="card hoverable" >
+                        <div class="card-image">
+                            <img src="https://www.tinkercad.com/img/favicon.ico" alt="logo tinkercad">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title center-align">Tinkercad</span>
+                            <p>Aqui modelamos e testamos circuitos antes de pôr a mão na massa.</p>
+                            <p>"O Tinkercad é uma coleção on-line gratuita de ferramentas de software 
+                                que ajudam pessoas de todo o mundo a pensar, criar e fabricar. 
+                                A introdução ideal à Autodesk, líder em software de design, 
+                                engenharia e entretenimento 3D."</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="https://www.tinkercad.com/" target="_blank">Acesse</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content col s12 m6 l4">                
+                    <div class="card hoverable" >
+                        <div class="card-image">
+                            <img src="https://www.nucleodoconhecimento.com.br/wp-content/uploads/2018/08/word-image-95.png" alt="placa arduino componentes explicados">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title center-align">Artigo: </span>
+                            <p>A IMPORTÂNCIA DA PLATAFORMA ARDUINO NO MEIO ACADÊMICO</p>
+                            <p>"Com a crescente formação de novos profissionais na fase 
+                                acadêmica para as áreas de Tecnologia da Informação e Comunicação (TI&C). 
+                                Surge a necessidade de agregar tecnologias importantes para a construção do 
+                                conhecimento aos estudantes. A proposta é de uma maior abertura dos cursos, 
+                                para a aplicação de estudos sobre uso das plataformas abertas[..]"</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="https://www.nucleodoconhecimento.com.br/engenharia-eletrica/meio-academico" target="_blank">Acesse</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content col s12 m6 l4">                
+                    <div class="card hoverable" >
+                        <div class="card-image">
+                            <img src="https://emc-src.eptv.com.br/dbimagens/robo_sao_790x444_31032020130254.jpg" alt="robô conta com placas de Arduino e Raspberry ">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title center-align">COVID-19</span>
+                            <p>Pesquisadores criam protótipo de robô que poderá ajudar no combate à Covid-19.</p>
+                            <p>Equipe atua em uma startup na cidade de São Carlos e desenvolveu projeto para automatizar entrega de alimentos e remédios a pacientes</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="https://www.acidadeon.com/saocarlos/cotidiano/coronavirus/NOT,0,0,1495956,pesquisadores+criam+prototipo+de+robo+que+podera+ajudar+no+combate+a+covid+19.aspx#" target="_blank">Acesse</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12 m4">                
+                    <div class="card hoverable" >
+                        <div class="card-image">
+                            <img src="https://www.tinkercad.com/img/favicon.ico" alt="logo tinkercad">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title center-align">Tinkercad</span>
+                            <p>Aqui modelamos e testamos circuitos antes de pôr a mão na massa.</p>
+                            <p>"O Tinkercad é uma coleção on-line gratuita de ferramentas de software 
+                                que ajudam pessoas de todo o mundo a pensar, criar e fabricar. 
+                                A introdução ideal à Autodesk, líder em software de design, 
+                                engenharia e entretenimento 3D."</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="https://www.tinkercad.com/" target="_blank">Acesse</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6 l4">                
+                    <div class="card hoverable" >
+                        <div class="card-image">
+                            <img src="https://i1.wp.com/onlinecursosgratuitos.sfo2.digitaloceanspaces.com/2019/03/arduino.jpg?w=640&ssl=1" alt="circuito arduino">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title center-align">Apostilas Grátis</span>
+                            <p>6 Apostilas de Arduino para Download em PDF</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="https://onlinecursosgratuitos.com/6-apostilas-de-arduino-para-download-em-pdf/" target="_blank">Acesse</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6 l4">                
+                    <div class="card hoverable" >
+                        <div class="card-image">
+                            <img src="https://s3-sa-east-1.amazonaws.com/multilogica-files/Guia_Capa_PI.png" alt="capa ebook guia iniciante arduino gratis">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title center-align">Livro</span>
+                            <p>Guia para iniciantes: PDF.</p>
+                            <p>para baixar grátis.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="https://edisciplinas.usp.br/pluginfile.php/3252633/mod_resource/content/1/Guia_Arduino_Iniciante_Multilogica_Shop.pdf" target="_blank">Acesse</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--FIM CONTEÚDO CENTRAL -->
+
+        <!-- FOOTER -->
+        <footer class="page-footer cyan darken-2">
+            <div class="row">                    
+                <div class="col l2 s12">
+                    <h5 class="white-text">Referências</h5>
+                    <ul>
+                        <li><a class="white-text" href="https://classroom.google.com/c/MjkyNDYwMTk4MDJa/a/NTQzNzU2OTk3MTZa/details" target="_blank">Classroom</a></li>
+                        <li><a class="white-text" href="https://www.arduino.cc/" target="_blank">Arduino</a></li>
+                        <li><a class="white-text" href="https://materializecss.com/about.html" target="_blank">Materialize</a></li>
+                        <li><a class="white-text" href="https://www.youtube.com/watch?v=k2QoQLaP7Lc" target="_blank">Canal Ricardo Sanches</a></li>
+                    </ul>
+                </div>
+                <div class="col l9">
+                    <a href="http://www.fateclins.edu.br/v4.0/" target="_blank">
+                        <div class="col l6">
+                            <h5 class="white-text">Fatec Lins - Professor Antônio Seabra</h5>
+                            <p class="white-text">Faculdade de Tecnologia do Estado de São Paulo.</p>
+                        </div> 
+                        <div class="col l6">
+                            <img src="resources/img/fatec.jpg" width="300" height="200"   alt="Fatec">
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#top" class="white-text right"><i class="material-icons medium">arrow_upward</i></a>
+                </div>
+            </div>
+            <div class="footer-copyright cyan darken-2">
+                <div class="col l2 "><p class="white-text"> FATEC Lins - Programação WEB - Ricardo de Moraes Gonçalves</p></div>
+                <div class="col l10 right">
+                    <ul>
+                        <li class="btn-floating btn-small white tooltipped" data-position="left" data-tooltip="Facebook" >
+                            <a href="https://www.facebook.com/groups/arduino.br/" target="_blank">
+                                <img  class="vertical_align" src="https://img.icons8.com/material/24/000000/facebook-new.png" alt="icone facebook"/>
+                            </a>                            
+                        </li>
+                        <li class="btn-floating btn-small white tooltipped" data-position="top" data-tooltip="Twitter">
+                            <a href="https://twitter.com/arduino" target="_blank">
+                                <img src="https://img.icons8.com/material/24/000000/twitter-squared.png" alt="icone twitter stylo material"/>
+                            </a>
+                        </li>
+                        <li class="btn-floating btn-small white tooltipped" data-position="top" data-tooltip="Instagram">
+                            <a href="https://www.instagram.com/explore/tags/arduino/?hl=pt-br" target="_blank">
+                                <img src="https://img.icons8.com/material/24/000000/instagram-new--v1.png" alt="icone instagram stylo material"/>
+                            </a>
+                        </li>
+                        <li class="btn-floating btn-small white tooltipped" data-position="top" data-tooltip="Github">
+                            <a href="https://github.com/search?q=arduino" target="_blank">
+                                <img src="https://img.icons8.com/material-rounded/24/000000/github.png" alt="icone github stylo material"/>
+                            </a>
+                        </li>
+                        <li class="btn-floating btn-small white tooltipped" data-position="top" data-tooltip="Youtube">
+                            <a href="https://www.youtube.com/results?search_query=arduino" target="_blank">
+                                <img src="https://img.icons8.com/material/24/000000/youtube--v2.png" alt="icone youtube stylo material">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <!-- FIM FOOTER -->
+        <!--MENUS NAVBAR-->
+        <ul id="sidenav-mobile" class="sidenav orange darken-3" style="opacity: 0.9;" >
+            <li><a href="https://www.arduino.cc/" target="_blank"><i class="material-icons left" >compare</i>Template de Referência</a></li>
+            <li><a href="manual_.html" target="_blank"><i class="material-icons left">import_contacts</i>Manual</a></li>
+            <li><a  href="#modal_autor" class="modal-trigger"><i class="material-icons left">contact_mail</i>Autor</a></li>
+        </ul>
+        <ul id="drop-projetos" class="dropdown-content cyan darken-2">
+            <li> <a class="white-text" href="https://www.eletruscomp.com.br/blog/projetos-com-arduino" target="_blank"> Eletrus </a> </li>
+            <li> <a class="white-text" href="http://labdegaragem.com/page/projetos-1" target="_blank">Garagem </a> </li>
+            <li> <a class="white-text" href="https://www.people.com.br/noticias/robotica/5-projetos-que-voce-pode-fazer-com-arduino" target="_blank">People </a> </li>
+            <li> <a class="white-text" href="https://aldeia.cc/blog/tecnologia/projetos-feitos-com-o-arduino/" target="_blank">Aldeia </a> </li>
+        </ul>
+        <ul id="drop-cursos" class="dropdown-content cyan darken-2">            
+            <li> <a class="white-text" href="https://www.udemy.com/course/automacao-profissional-com-arduino-completo" target="_blank">Udemy </a> </li>
+            <li> <a class="white-text" href="https://www.alura.com.br/curso-online-arduino" target="_blank">Alura </a> </li>
+            <li> <a class="white-text" href="https://cursodearduino.net" target="_blank">Flavio Guimaraes </a> </li>
+        </ul>
+        <ul id="drop-videos" class="dropdown-content cyan darken-2">
+            <li> <a class="white-text" href="https://www.youtube.com/watch?v=C4Uf1exaYCo" target="_blank">Basic-Code </a> </li>
+            <li> <a class="white-text" href="https://www.youtube.com/watch?v=RAAqZe5QsxI" target="_blank">GBA-Tec </a> </li>
+            <li> <a class="white-text" href="https://www.youtube.com/watch?v=G9WZ47IJrZk" target="_blank">Canal TDC </a> </li>
+        </ul>
+        <div id="modal_autor" class="modal blue-grey">
+            <div class="modal-content row black white-text center z-depth-2">                
+                <div class="col s12 m9">
+                    <div>
+                        <h4>Ricardo de Moraes Gonçalves</h4>
+                        <p>Programação WEB - Análise e Desenvolvimento de Sistemas - FATEC Lins</p>
+                        <h5>ricardo.goncalves10@fatec.sp.gov.br</h5>
+                        <h5>ricardomoraesg@gmail.com</h5>
+                    </div>
+                </div>
+                <div class="col s12 m3 vertical_align">
+                    <img src="resources/img/rmg.png" alt="avatar autor">
+                </div>                
+            </div>
+            <a class="modal-close btn grey darken-2 right"><i class="material-icons">close</i></a>
+        </div>
+        <!-- FIM MENU NAVBAR-->
+        <!-- JAVASCRIPT -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="resources/materialize_css/js/materialize.min.js"></script>
+        <script type="text/javascript" src="resources/materialize_css/js/index.js"></script>        
+    </body>
+</html>

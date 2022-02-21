@@ -1,0 +1,1 @@
+Esse jogo foi um exercício aplicado na aula de javascript.

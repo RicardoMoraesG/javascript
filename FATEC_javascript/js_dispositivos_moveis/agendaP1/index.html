@@ -1,0 +1,304 @@
+<!-- 
+Faculdade de Tecnologia de Lins - Prof Antonio Seabra 
+Programação de Dispositivos Móveis
+Curso: Análise e Desenvolvimento de Sistemas
+Prof. Felipe Maciel - felipe.maciel@fateclins.edu.br
+
+Implemente uma simples agenda telefônica que possua os recursos listadas abaixo:
+
+Funcionalidade 1 - Adicionar um registro (3 pontos)
+Funcionamento: Após o usuário inserir os dados do formulário (nome e telefone) e clicar em [ADICIONAR], os dados devem ser listados abaixo, conforme o layout apresentado. 
+Restrições: caso o campo telefone possua um valor menor que nove caracteres, deve-se adicionar a classe red ao campo em questão, caso contrário o campo deverá permanecer como está (sem a classe red). Para verificar a quantidade de caracteres utilize a função já implementada chamada checarTelefone(valor). Esta função recebe um valor e retorna verdadeiro caso a quantidade de caracteres for maior ou igual a nove, e falsa caso contrário.
+
+Funcionalidade 2 - Atualizar um registro parte 1 (1 ponto)
+Funcionamento: ao clicar no ícone [EDITAR], os dados atuais devem ser previamente carregados nos campos que encontram-se na aba atualizar. Para carregar a aba atualizar, utilize o seguinte código $('.tabs').tabs('select','sec-atualizar');
+
+Funcionalidade 3 - Atualizar um registro parte 2 (2 pontos)
+Funcionamento: ao clicar em [ATUALIZAR], deve-se atualizar os dados (nome e telefone) do registro em questão, levando-se em consideração o id escolhido.
+
+Funcionalidade 4 - Excluir um registro (1 ponto)
+Funcionamento: ao clicar no ícone [EXCLUIR], deve-se excluir o registro em questão.
+
+Funcionalidade 5 - Procurar um registro (2 pontos)
+Funcionamento: após digitar o nome a ser procurado e clicar em [PROCURAR], deve-se listar apenas o registro o qual o nome é exatamente igual ao digitado no campo.
+
+Funcionalidade 6 - Mostrar um registro (2 pontos)
+Funcionamento: ao clicar em [MOSTRAR TODOS], deve-se listar todos os registros cadastrados pelo usuário e limpar o campo procurar.
+********************************************************************************************
+--> 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<title>Agenda Telefônica</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	<link rel="stylesheet" href="css/estilos.css">
+	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>	
+<div class="row">
+	<div class="col s12 teal white-text center"><h1>Minha Agenda</h1></div>
+</div>
+<!-- abas -->
+<ul id="tabs-swipe-demo" class="tabs center">
+	<li class="tab col s3"><a class="active" href="#sec-adicionar">Adicionar</a></li>
+	<li class="tab col s3"><a href="#sec-atualizar">Atualizar</a></li>
+	<li class="tab col s3"><a href="#sec-procurar">Procurar</a></li>
+</ul>
+<!-- /abas -->
+<!-- adicionar -->
+<div class="row" id="sec-adicionar">
+	<div class="col s4 offset-s4">
+	 	<div class="card">
+			<div class="row">
+				<div class="input-field col s12">
+					<input placeholder="Digite o Nome"class="dado" id="inp-nome" type="text">
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+					<input placeholder="Digite o Telefone" class="dado"id="inp-telefone" type="text">
+				</div>
+			</div>			
+			<div class="row">
+				<div class="col s12">
+					<a href="#" class="btn" class="dado" id="btn-adicionar">adicionar</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--/ adicionar -->
+<!-- atualizar -->
+<div class="row" id="sec-atualizar">
+	<div class="col s4 offset-s4">
+	 	<div class="card">
+			<div class="row">
+				<div class="input-field col s12">
+					<input placeholder="Digite o id do registro a ser atualizado" class="atu"id="inp-atualizar-id" type="text">
+				</div>
+			</div>	 		
+			<div class="row">
+				<div class="input-field col s12">
+					<input placeholder="Digite o nome"class="atu" id="inp-atualizar-nome" type="text">
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+					<input placeholder="Digite o telefone" class="atu"id="inp-atualizar-telefone" type="text">
+				</div>
+			</div>			
+			<div class="row">
+				<div class="col s12">
+					<a href="#" class="btn" id="btn-atualizar">atualizar</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--/ atualizar -->
+<!-- procurar -->
+<div class="row" id="sec-procurar">
+	<div class="col s4 offset-s4">
+	 	<div class="card">
+			<div class="row">
+				<div class="input-field col s12">
+					<input placeholder="Digite o nome" id="inp-procurar-nome" type="text">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12">
+					<a href="#" class="btn" id="btn-procurar">procurar</a>
+					<a href="#modal1" class="btn right modal-trigger" id="btn-mostrar-todos">mostrar todos</a>
+				</div>
+				<!-- Modal Structure -->
+  				<div id="modal1" class="modal">
+    				<div class="modal-content">
+     			 	<h4>Todos os Registros</h4>     			 	
+					<ul id='lista'></ul>
+   				</div>
+   				<div class="modal-footer">
+    		  		<a id="fechar-todos" href="#!" class="modal-close waves-effect waves-green btn-flat">Fechar</a>
+    			</div>
+  			</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--/ procurar -->
+
+<!-- lista -->
+<div class="row">
+	<div class="col s8 offset-s2">
+		<table>
+			<thead>
+				<tr>
+					<th>Código</th>
+					<th>Nome</th>
+					<th>Telefone</th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>			
+			<tbody>
+				
+			</tbody>
+		</table>		
+	</div>
+</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/checar.js"></script>
+<script>
+	//verifica se algum campo esta sem preenchimento.
+function campoVazio(campo){
+	return (campo.length == 0) ? true : false;
+}
+//1 - ADICIONAR UM REGISTRO
+$(document).ready(function(){
+	let codigo = 0;
+	$('#btn-adicionar').click(function(){
+		/*
+		let codigo = $('tbody >tr').length ;//recebe a quantidade de elementos tr dentro do elemento tbody já foram adicionados(ou seja, quantos cadastros foram feitos).Problema: se deletar itens, ao cadastrar novos corre o risco de duplicar o codigo. Ex:3 itens, 1 2 e 3, excluo o 1 - o length sera 2 - ao inserir um novo ele será o 3: 2 3 e 3.
+		*/
+		
+		let nome = $('#inp-nome').val();
+		let telefone = $('#inp-telefone').val();				
+		//informa qual campo precisa de ajuste.
+		!(checarTelefone(telefone)) ? $('#inp-telefone').addClass('red')
+		: $('#inp-telefone').removeClass('red') ;
+		campoVazio(nome)? $('#inp-nome').addClass('red') : $('#inp-nome').removeClass('red');
+		//Não permite adicionar enquanto preenchimento estiver incorreto.
+		campoVazio(nome) || !(checarTelefone(telefone)) ? 
+			alert('Preencher todos os campos.')
+			://senão:
+			$('tbody').append(
+				'<tr>'+
+					'<td id="item_codigo">'+codigo+'</td>'+
+					'<td id="item_nome">'+nome+'</td>'+
+					'<td id="item_telefone">'+telefone+'</td>'+
+					'<td><a href="#" id="editar"><i class="material-icons">edit</i></a></td>'+
+					'<td id="deletar"><a href="#"><i class="material-icons">delete_forever</i></a></td>'+
+				'</tr>'
+				
+			);
+			codigo++;
+		//FIM 1 - ADICIONAR UM REGISTRO.
+			
+			//limpar
+			$('.dado').val('');
+				
+// 2 - EDITAR UM REGISTRO.
+	//seleciona o ícone 'editar' filhos da tag 'tbody' para elementos criados após o carregamento da página:
+	$('tbody').on('click', '#editar', function(){
+		//coleta os dados do item tr
+		var item_editar = $(this).parent().parent();//this é 'editar', filho de td -> filho de tr;
+		var cod_editar = item_editar.find('#item_codigo').text();
+		var nome_editar = item_editar.find('#item_nome').text();
+		var tel_editar = item_editar.find('#item_telefone').text();
+		//carregar os dados do item na seção 'atualizar'
+		$('.tabs').tabs('select','sec-atualizar');//carrega a aba atualizar.
+		$('#inp-atualizar-id').val(cod_editar);//atribui o valor coletado para o campo. 
+		$('#inp-atualizar-nome').val(nome_editar); 
+		$('#inp-atualizar-telefone').val(tel_editar); 
+		
+		
+// 3 - ATUALIZAR O REGISTRO CARREGADO NO PASSO 2.
+		//Ler os registros da lista('tbody>tr') para encontrar o codigo em edição.
+		
+		$('#btn-atualizar').click(function(){			
+			let nome_tabela, telefone_tabela, cod;
+			let nome_atual = $('#inp-atualizar-nome').val();
+			let telefone_atual = $('#inp-atualizar-telefone').val();
+			let cod_edicao =  $('#inp-atualizar-id').val();	
+			//verifica se os dados novos estão no padrão.
+			!(checarTelefone(telefone_atual)) 
+			? $('#inp-atualizar-telefone').addClass('red')
+			: $('#inp-atualizar-telefone').removeClass('red') ;
+			campoVazio(nome_atual)
+			? $('#inp-atualizar-nome').addClass('red') 
+			: $('#inp-nome').removeClass('red');
+			//Não permite adicionar enquanto preenchimento estiver incorreto.
+			(campoVazio(nome_atual) || !checarTelefone(telefone_atual) )
+			? 
+			alert('Preencher todos os campos.')								
+			://senão:
+			$('tbody > tr').each(function(){
+				cod = $(this).find('#item_codigo').text();					
+				if(cod_edicao == cod){
+					nome_tabela = $(this).find('#item_nome');
+					nome_tabela.text(nome_atual);
+					telefone_tabela = $(this).find('#item_telefone');
+					telefone_tabela.text(telefone_atual);
+					
+				}					
+			})	
+			//limpar
+			$('.atu').val('');															
+		});		
+		
+	}	
+	
+	);
+	
+		
+
+	
+// 4 - EXCLUIR UM REGISTRO.
+	$('tbody').on('click', '#deletar', function(){
+		$(this).parent().remove();//
+	});
+});
+// 5 - PROCURAR UM UNICO REGISTRO
+$('#btn-procurar').click(function(){
+	let nome_procurar = $('#inp-procurar-nome').val();
+	let nome_tab, cod_tab, tel_tab, encontrado = false;
+	$('tbody > tr').each(function(){
+		nome_tab = $(this).find('#item_nome').text();	
+		if(nome_procurar == nome_tab){
+			encontrado = true;
+			cod_tab = $(this).find('#item_codigo').text();
+			tel_tab = $(this).find('#item_telefone').text();
+			alert('Código: '+ cod_tab + ' Nome: ' + nome_tab + ' Telefone: ' + tel_tab);2
+		} 			
+	});
+	if(!encontrado) { 
+		alert('Não encontrado');
+	}		
+});
+// 6 - MOSTRAR TODOS OS REGISTROS
+$('#btn-mostrar-todos').click(function(){
+	$('#inp-procurar-nome').val('');//limpa o campo procurar;	
+	$('tbody > tr').each(function(){//carrega cada registro
+		cod_tab = $(this).find('#item_codigo').text();
+		nome_tab = $(this).find('#item_nome').text();
+		tel_tab = $(this).find('#item_telefone').text();
+		$('#lista').append(
+			'<tr id="temporario">'+
+				'<td>'+ cod_tab +'</td>'+
+				'<td>'+ nome_tab +'</td>'+
+				'<td>'+ tel_tab +'</td>'+
+			'</tr>;'
+		);
+	});
+});
+//limpar a exibição quando fechar.	
+$('#modal1').on('click', '#fechar-todos', function(){	
+	$('ul#lista').find('tr').each(function(){
+		$(this).remove();
+	});		
+}); 
+
+
+});//fim document.ready
+
+$(document).ready(function(){
+$('.modal').modal();
+});	
+
+</script>
+	
+</body>
+</html>

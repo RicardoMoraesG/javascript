@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aula 01. HTML e CSS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="resources/css/materialize.min.css" >
+        <style>
+            .bloco {
+                padding: 0 15px;
+            }
+            .bloco .material-icons{
+                font-size: inherit
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="light-blue lighten-1">
+            <div class="nav-wrapper container">
+                <a id="logo" href="#" class="brand-logo">Logo</a>
+                <ul id="dropdown" class="right hide-on-med-and-down">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Serviços</a></li>
+                </ul>
+                <ul class="sidenav" id="nav-mobile">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Serviços</a></li>
+                </ul>
+                <a href="#" data-target="nav-mobile" class="sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                </a>
+            </div>
+        </nav>
+        <section id="bannerIndex" class="section no-pad-bot">
+            <div class="container">
+                <h1 class="header center orange-text">HTML 5 - Primeiros Passos</h1>
+                <div class="row center">
+                    <h5>Conhecendo alguns elementos do HTML 5 e CSS 3</h5>
+                </div>
+                <div class="row center">
+                    <a href="https://www.w3schools.com" target="_blank" id="botao"
+                       class="btn-large waves-effect waves-light orange">
+                        Saiba mais
+                    </a>
+                </div>
+            </div>
+        </section>
+        <div class="container"><!-- comentário -->
+            <div class="section">
+                <div class="row">
+                    <div class="col s12 m4">
+                        <div class="bloco">
+                            <h2 class="center light-blue-text">
+                                <i class="material-icons">flash_on</i></h2>
+                            <h5 class="center">MOTIVAÇÃO</h5>
+                            <p class="light">O uso crescente de celulares nos      leva a necessidade
+                                de desenvolver conteúdos adaptáveis aos diferentes meios</p>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="bloco">
+                            <h2 class="center light-blue-text">
+                                <i class="material-icons">group</i></h2>
+                            <h5 class="center">BOOTSTRAP</h5>
+                            <p class="light">Framework com foco no desenvolvimento <em>Mobile First</em>
+                                focando no desenvolvimento responsivo.</p>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="bloco">
+                            <h2 class="center light-blue-text">
+                                <i class="material-icons">settings</i></h2>
+                            <h5 class="center">MATERIALIZE</h5>
+                            <p class="light ">Framework com foco no visual, com base na metodologia Material
+                                Design da Google. Simplicidade na criação das interfaces.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer orange">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 l6">
+                        <h5 class="white-text">Objetivos:</h5>
+                        <p class="grey-text text-lighten-4">Aprender conceitos básicos sobre HTML5, CSS e DESIGN RESPONSIVO</p>
+                    </div>
+                    <div class="col s12 l3">
+                        <h5 class="white-text">Tecnologias Envolvidas</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-4" href="#">HTML 5</a></li>
+                            <li><a class="grey-text text-lighten-4" href="#">CSS 3</a></li>
+                            <li><a class="grey-text text-lighten-4" href="#">BOOTSTRAP</a></li>
+                            <li><a class="grey-text text-lighten-4" href="#">MATERIALIZE</a></li>
+                        </ul>
+                    </div>
+                    <div class="col s12 l3">
+                        <h5 class="white-text">Forma de Avaliação</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-4" href="#">Prova 1</a></li>
+                            <li><a class="grey-text text-lighten-4" href="#">Prova 2</a></li>
+                            <li><a class="grey-text text-lighten-4" href="#">Trabalhos em Sala</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="resources/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.sidenav').sidenav();
+            });
+        </script>
+    </body>
+</html>

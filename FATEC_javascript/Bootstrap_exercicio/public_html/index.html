@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--
+    Ricardo de Moraes Gonçalves 
+        Programação WEB.
+        4º ADS.
+-->
+<html lang="pt-BR">
+    <head>
+        <title>Bootstrap - Atividade</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <!-- Como o Bootstrap4 não tem uma bibliteca própria de icones, 
+        e a do bootstrap3 não é suportada, a documentação recomenda o Font Awesome ou o Material Icons -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" 
+              integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" 
+              crossorigin="anonymous">
+        <link rel="shortcut icon" href="src/img/logo_b.png" />
+        <link rel="stylesheet" href="src/sidenav.css"/>
+    </head>
+    <body>
+        <nav class="navbar" 
+             style="height:65px; background: #29b6f6; box-shadow: 2px 5px 15px #808080;">
+            <!-- 
+            As classes de cores são limitadas às básicas se comparadas 
+                ao Materialize, que permite uma grande personalização somente manipulando as classes prontas. 
+            Nessa versão do Bootstrap, personalizações mais detalhadas, 
+                como a cor exata da navbar, precisam ser feitas diretamente no css. 
+            -->
+
+            <!-- Botão que ativa o menu lateral -->
+            <button class="navbar-toggler d-sm-none" type="button" onclick="abre_menu()">
+                <!-- d-sm-none esconde o elemento acima desse tamanho de tela -->
+                <i class="fa fa-bars text-light "></i>
+            </button>
+            <!-- text-small-center alinha o texto ao centro somente em telas pequenas -->
+            <a class="ml-5 navbar-brand nav-link text-white text-small-center " href="#">Logo</a>
+            <ul class="mr-5 nav justify-content-end">
+                <li class="nav-item">
+                    <!-- text-decoration-none: remove o sublinhado dos links -->
+                    <a class="nav-link text-white block d-none d-sm-block text-decoration-none">
+                        Serviços
+                    </a>
+                    <!-- d-none esconde o elemento, d-*tamanho*-block o revela acima desse tamanho de tela-->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white block d-none d-sm-block text-decoration-none">
+                        Home
+                    </a>
+                    <!-- d-none esconde o elemento, d-*tamanho*-block o revela acima desse tamanho de tela-->
+                </li>
+            </ul>
+        </nav>
+        <!-- Menu vertical
+                Não encontrei uma classe própria do Bootstrap para sidenav, 
+                 somente personalizações de terceiros.
+                 Aqui foi aplicado o exemplo básico da w3schools:
+        -->
+        <div id="menu_lateral" class="sidenav">        
+            <ul class="navbar-nav">
+                <li>
+                    <a href="#" class="closebtn" onclick="fecha_menu()">
+                        <i class="fa fa-window-close"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"><i class="fa fa-toolbox"></i> 
+                        Serviços
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"><i class="fa fa-home"></i>
+                        Home
+                    </a> 
+                </li>
+            </ul>
+        </div>
+        <div class="container pt-3">
+            <!-- Ao contrário da limitação das cores, as classes 
+            para efeitos responsivos oferecem muitas opções.
+            Margens, paddings, colunas, alinhamentos ficam mais práticos com isso.
+            -->
+            <section class="row align-content-center align-items-center my-5 pb-3">
+                <h1 class="text-center col-lg-12 my-5" 
+                    style="color:#ff9800; font-size: 3em">
+                    HTML 5 - Primeiros Passos
+                </h1>
+                <h5 class="text-center font-weight-bold col-lg-12" style="font-size: 1em;">
+                    Conhecendo alguns elementos do HTML5 e do CSS3.
+                </h5>
+                <div class="col-lg-12 text-center p-3">
+                    <button class="font-weight-bolder btn btn-warning text-light px-4" 
+                            style="font-size: 1em; background: #ff9800;box-shadow: 2px 5px 15px #808080;">
+                        Saiba mais
+                    </button>
+                </div>
+            </section>
+        </div>
+        <div class="container">
+            <section class="row align-content-center align-items-center">
+                <div class="col-sm-4 pr-4">
+                    <h2 class="text-center text-primary"><i class="fa fa-bolt"></i></h2>
+                    <h5 class="text-center">MOTIVAÇÃO</h5>
+                    <p class="text-justify small">
+                        O uso crescente de celulares nos leva 
+                        a necessidade de desenvolver conteúdos 
+                        adaptáveis aos diferentes meios.
+                    </p>
+                </div>
+                <div class="col-sm-4 px-4">
+                    <h2 class="text-center text-primary"><i class="fa fa-user-friends"></i></h2>
+                    <h5 class="text-center">BOOTSTRAP</h5>
+                    <p class="text-justify small">
+                        Framework com foco no desenvolvimento 
+                        Mobile First
+                        focando no desenvolvimento responsivo.
+                    </p>
+                </div>
+                <div class="col-sm-4 pl-4">
+                    <h2 class="text-center text-primary"><i class="fa fa-cog"></i></h2>
+                    <h5 class="text-center">MATERIALIZE</h5>
+                    <p class="text-justify small">
+                        Framework com foco no visual, com base 
+                        na metodologia Material Design da Google. 
+                        Simplicidade na criação das interfaces.
+                    </p>
+                </div>
+            </section>           
+        </div>
+        <footer class="pt-4 mt-4 text-light text-justify" style="background: #ff9800;">
+            <div class="container mt-4">
+                <div class="row mt-4">
+                    <div class="col-md-4 col-sm-12 pr-4 text-justify">
+                        <h5 class="small font-weight-bold">Objetivos</h5>
+                        <p>Aprender conceitos básicos sobre HTML5, CSS e DESIGN RESPONSIVO</p>
+                    </div>
+                    <div class="col-md-4 col-sm-12 px-4 text-justify ">
+                        <h5 class="small font-weight-bold">Tecnologias envolvidas</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none text-light">HTML 5</a></li>
+                            <li><a href="#" class="text-decoration-none text-light">CSS 3</a></li>
+                            <li><a href="#" class="text-decoration-none text-light">BOOTSTRAP</a></li>
+                            <li><a href="#" class="text-decoration-none text-light">MATERIALIZE</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-12 pl-4 text-justify">
+                        <h5 class="small font-weight-bold">Forma de Avaliação</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none text-light">Prova 1</a></li>
+                            <li><a href="#" class="text-decoration-none text-light">Prova 2</a></li>
+                            <li><a href="#" class="text-decoration-none text-light">Trabalhos em Sala</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://kit.fontawesome.com/yourcode.js"></script>
+        <script>
+                        /* Define a largura da sidenav em 250px */
+                        function abre_menu() {
+                            document.getElementById("menu_lateral").style.width = "250px";
+                        }
+                        /* Define a largura da sidenav em 0px: esconde! */
+                        function fecha_menu() {
+                            document.getElementById("menu_lateral").style.width = "0";
+                        }
+        </script>
+    </body>
+</html>

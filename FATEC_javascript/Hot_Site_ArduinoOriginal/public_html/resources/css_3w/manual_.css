@@ -1,0 +1,55 @@
+/**
+Estilo adicional para a página do 'Manual'.
+*/
+header, main, footer, section{
+    padding-left: 300px;
+}
+header h1 {
+    margin-top: 0;
+    padding-bottom:5px;
+    padding-top: 20px;
+}
+.card-panel {
+    margin-right: 20px;
+    margin-left: 10px;
+    box-shadow: -2px 3px 5px grey;
+    border-bottom-right-radius: 3%;
+    text-align: justify;
+}
+@media only screen and (max-width : 992px) {
+    header, main, footer, section{
+        padding-left: 0;
+    }
+}
+
+.vertical_align {      
+    display: flex;
+    align-items: center;
+    padding: inherit;
+}
+
+/* Classes para exibir indentação */
+.code_text {
+    line-height: 0.8;
+    font-family: monospace;
+}
+.indent_1{
+    text-indent: 1em;
+}
+.indent_2{
+    text-indent: 2em;
+}
+.indent_3{
+    text-indent: 3em;
+}
+.indent_4{
+    text-indent: 4em;
+}
+.indent_5{
+    text-indent: 5em;    
+}
+/*alinha o icone com o texto*/
+.material-icons {
+    display: inline; 
+    vertical-align: middle;
+}

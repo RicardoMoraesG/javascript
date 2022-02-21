@@ -1,0 +1,40 @@
+/**
+ * HTML: ex007.html
+ */
+body {
+    font        : normal 18pt arial;
+    color       : rgb(54, 2, 151);
+    background  : rgb(223, 226, 226);
+    padding-left: 10px;
+}
+
+input {
+    font      : normal 16pt;
+    padding   : 5px;
+    width     : 100px;
+    text-align: center;
+}
+
+input.botao {
+    color     : rgb(245, 241, 242);
+    background: darkorange;
+}
+
+div.resultado {
+    font        : normal 20pt;
+    color       : ivory;
+    height      : 70px;
+    line-height : 60px;
+    width       : 790px;
+    text-align  : justify;
+    margin-top  : 35px;
+    padding-left: 10px;
+    background  : rgb(54, 2, 151);
+}
+
+.conta {
+    background: cyan;
+    padding   : 10px;
+    margin-top: 15px;
+    width: 800px;
+}

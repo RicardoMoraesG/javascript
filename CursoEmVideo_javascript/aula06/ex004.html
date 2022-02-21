@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 04</title>
+    <style>
+        body {
+            font: normal 20px arial;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        //var nome = window.prompt("qual seu nome?")
+        var preço = window.prompt("qual o preço do picolé? ")
+        //document.writeln(`seu nome tem <strong>${nome.length}</strong> letras</br>`)
+        //document.writeln(`seu nome em maiusculas ${nome.toUpperCase()}`)
+        document.writeln(`O picolé custa ${ preço.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}) }, bom apetite!`)
+    </script>
+</body>
+
+</html>

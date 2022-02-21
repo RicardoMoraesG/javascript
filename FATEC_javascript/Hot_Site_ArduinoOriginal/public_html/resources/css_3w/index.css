@@ -1,0 +1,38 @@
+/* customização da navbar para mudar conforme rolagem da tela --> */
+html, body {
+    height: 100%;
+}
+/** Classe para quando o elemento estiver acima do limite*/
+.pin-top {
+    position: relative;
+}
+/** Classe para quando o elemento estiver abaixo do limite*/
+.pin-bottom {
+    position: fixed;
+}
+/** Classe para quando o elemento é fixado*/
+.pinned {
+    position: fixed !important;
+}
+/**
+/**
+Classes próprias padronizadas com underline para diferenciar das classes do Materialize:
+*/
+.z_1{
+    z-index: 1;
+}
+.nav_sticky {
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+    box-shadow: none;
+}
+
+div#logo :hover{
+    background-color:  #00b8d4;
+}
+/*alinha o icone com o texto*/
+.material-icons {
+    display: inline; 
+    vertical-align: middle;
+}

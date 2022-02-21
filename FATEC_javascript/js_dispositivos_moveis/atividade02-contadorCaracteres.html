@@ -1,0 +1,77 @@
+<!-- 
+Faculdade de Tecnologia de Lins - Prof Antonio Seabra 
+Programação de Dispositivos Móveis
+Curso: Análise e Desenvolvimento de Sistemas
+Prof. Felipe Maciel - felipe.maciel@fateclins.edu.br
+********************************************************************************************
+
+Sem alterar a estrutura HTML, implemente o necessário para que o exercício funcione como descrito abaixo. 
+
+Funcionamento:
+Você irá desenvolver um contador de caracteres. O máximo de caracteres permitido para a digitação é 20, sendo assim, cada vez o que usuário digitar um caracter no campo [DIGITE O TEXTO], o texto mostrado no botão [RESTAM 20 CARACTERES] deve substituir o número 20 para a quantidade de caracteres restantes. Por fim, ao ultrapassar o limite de caracteres permitido, o botão deve ficar desabilitado para o clique (parametro disabled contendo o mesmo valor), caso quantidade de caracteres esteja dentro o permitido o botão deve retornar a estar habilitado para o clique.
+
+Dica Marota:
+1 - Para saber a quantidade de caracteres de um elemento utilize .length, ou seja, $('elemento').val().length;
+2 - Para remover um atributo utilize o método removeAttr('atributo'), ou seja, $('elemento').removeAttr('atributo');
+
+
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercício Contador Caracteres</title>
+	<style>
+		body{
+			text-align: center;
+		}
+		input[type="text"]{
+			width: 213px;
+			height: 50px;
+			margin-bottom: 10px;
+		}
+		#btnEnviar{
+			width: 213px;
+			height: 30px;
+		}
+		.borda{
+			border: 1px dashed #999;
+			width: 500px;
+			padding-bottom: 50px;
+			background-color: #fafafa;
+			margin: auto auto;
+		}
+		#main{
+			width: 100%;
+		}		
+		.disabled{
+			background: black;
+		}
+	</style>
+
+</head>
+<body>
+	<div id="main">
+		<div class="borda">
+			<h1>Contador de Caracteres</h1>
+			<input type="text" id="texto" placeholder="Digite o texto"><br/>
+			<button id="btnEnviar">Restam 20 caracteres</button>
+		</div>
+	</div>
+	<script src="jquery-3.5.1.min.js"></script>
+	<script>
+	// SEU CÓDIGO AQUI	
+	let pimbadas = 20;
+	let pimba = $('#texto');
+		pimba = $('#texto').keypress(function(){		
+		pimbadas--;				
+			$('#btnEnviar').text('Restam ' + pimbadas + ' caracteres');
+			if( (pimba.val().length) == 19){
+				pimba.attr('disabled', true);
+			}
+		});
+ 	</script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html-5>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Manual</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="resources/materialize_css/materialize.min.css">
+        <link rel="shortcut icon" href="https://img.icons8.com/material/24/000000/ninja-turtle--v1.png" />
+        <link rel="stylesheet" href="resources/css_3w/manual_.css">
+    </head>
+    <body class="teal lighten-5">
+        <header class="center red accent-1 lighten-2 ">
+            <h1 class="white-text">Classes Materialize</h1>
+            <div><a href="index.html" target="_blank" class="btn btn-flat white-text">Projeto Hotsite Arduino</a></div>
+        </header>
+        <!-- NAVEGAÇÃO LATERAL -->
+        <div id="side-fixed" class="sidenav sidenav-fixed z-depth-2">
+            <div class="center" style="padding: 15%;">
+                <a class="btn btn-large waves-effect tooltipped grey lighten-1"  data-position="right" data-tooltip="Documentação Materialize" style="border-radius:20%;" href="https://materializecss.com/">
+                    <img src="resources/img/materialize_css.png" width="50" height="50" alt="materialize_css" />
+                </a>
+            </div>
+            <ul>
+                <!-- por ordem de ocorrência no código html-->
+                <li><a href="#cls_0" class="btn btn-block waves-effect waves-red"><i class="material-icons">pin_drop</i>Pushpin</a></li>
+                <li><a href="#cls_1" class="btn btn-block waves-effect waves-red"><i class="material-icons">arrow_drop_down_circle</i>Dropdown</a></li>
+                <li><a href="#cls_2" class="btn btn-block waves-effect waves-red"><i class="material-icons">remove_red_eye</i>Hide-on</a></li>
+                <li><a href="#cls_3" class="btn btn-block waves-effect waves-red"><i class="material-icons">aspect_ratio</i>Tamanhos de tela</a></li>
+                <li><a href="#cls_4" class="btn btn-block waves-effect waves-red"><i class="material-icons">collections_bookmark</i>Cards</a></li>
+                <li><a href="#cls_5" class="btn btn-block waves-effect waves-red"><i class="material-icons">burst_mode</i>Sidenav</a></li>
+            </ul>
+        </div>
+        <div class="fixed-action-btn">
+            <a href="#top" class="btn-floating teal lighten-3"><i class="material-icons">eject</i></a>
+        </div>
+        <section id="central">
+            <!-- -->
+            <ul id="slide-out" class="sidenav">
+                <li><a href="#cls_0" class=""><i class="material-icons">pin_drop</i>Pushpin</a></li>
+                <li><a href="#cls_1" class=""><i class="material-icons">arrow_drop_down_circle</i>Dropdown</a></li>
+                <li><a href="#cls_2" class=""><i class="material-icons">remove_red_eye</i>Hide-on</a></li>
+                <li><a href="#cls_3" class=""><i class="material-icons">aspect_ratio</i>Tamanhos de tela</a></li>
+                <li><a href="#cls_4" class=""><i class="material-icons">collections_bookmark</i>Cards</a></li>
+                <li><a href="#cls_5" class=""><i class="material-icons">burst_mode</i>Sidenav</a></li>
+            </ul>
+            <!-- -->
+            <a href="#" data-target="slide-out" class="sidenav-trigger teal-text text-lighten-3 hide-on-large-only">
+                <i class="small material-icons">menu</i></a>
+            <div id="cls_0" class="card-panel">
+                <h4>Pushipin</h4>
+                <div class="container">
+                    <p>O <i>'pushipin'</i> posiciona o elemento de acordo com a rolagem da tela.</p>
+                    <p>Possui 3 estados:</p>
+                    <p>Um acima e abaixo do limite de rolagem e o estado fixado em que o elemento se torna fixo.</p>
+                    <p>
+                        Como o pushipin altera o posicionamento,
+                        o elemento pode aparecer diferente quando os estados mudarem.
+                        A documentação do Materialize recomenda as classes abaixo
+                        para estilizar corretamente os 3 estados:
+                    </p>
+                    <div class="card-panel code_text amber lighten-5" id="exemplo">
+                        <p class="right"><img src="resources/img/css_3.png" alt="Código CSS:" /></p>
+                        <p class="idt_1 grey-text">/* Classe para quando o elemento estiver acima do limite*/</p>
+                        <p class="indent_1">.pin-top {</p>
+                        <p class="indent_3">position: relative;</p>
+                        <p class="indent_1">}</p>
+                        <p class="indent_1 grey-text">/* Classe para quando o elemento estiver abaixo do limite*/</p>
+                        <p class="indent_1">.pin-bottom {</p>
+                        <p class="indent_3">position: relative;</p>
+                        <p class="indent_1">}</p>
+                        <p class="indent_1 grey-text">/* Classe para fixar*/</p>
+                        <p class="indent_1">.pinned {</p>
+                        <p class="indent_3">position: fixed !important;</p>
+                        <p class="indent_1">}</p>
+                    </div>
+                </div>
+            </div>
+            <div id="cls_1" class="card-panel">
+                <h4>Dropdown</h4>
+                <div class="container">
+                    <p>
+                        A classe <i>'dropdown'</i> pode ser usada para criar um menu suspenso,
+                        que só aparece se o usuário interagir com o ponto de ação.
+                    </p>
+                    <p>
+                        Depende de codificação JavaScript, para os dropdowns da nav
+                        utilizei o seguinte código:
+                    <div class="card-panel code_text amber lighten-5" id="exemplo">
+                        <p class="right"><img src="resources/img/js_logo.png" alt="Código JavaScript:" /></p>
+                        <p class="indent_1 grey-text">//começa o evento quando a página é carregada:</p>
+                        <p class="indent_1">document.addEventListener('DOMContentLoaded', function () {</p>
+                        <p class="indent_3 grey-text">//variável que manipula a classe:</p>
+                        <p class="indent_3">var elems = document.querySelectorAll('.dropdown-trigger');</p>
+                        <p class="indent_3 grey-text">//opções: aparecer abaixo do nome; aparecer ao passar o mouse:</p>
+                        <p class="indent_3">var instances = M.Dropdown.init(elems, {</p>
+                        <p class="indent_5">coverTrigger: false,</p>
+                        <p class="indent_5">hover: true</p>
+                        <p class="indent_3">});</p>
+                        <p class="indent_1">}); </p>
+                    </div>
+                </div>
+            </div>
+            <div id="cls_2" class="card-panel">
+                <h4><i>Hide-on</i></h4>
+                <div class="container">
+                    <p>As classes <i>'hide-on-[...]'</i> servem para controlar os elementos que são exibidos de acordo com o
+                        tamanho da tela.</p>
+                    <p>Podemos ver os exemplos abaixo ajustando o tamanho da tela do navegador</p>
+                    <div class="container">
+                        <div class="row  blue">
+                            <div class="col s6"><span class="flow-text white-text">class="hide-on-small-only" [< 600px]</span>
+                            </div>
+                            <div class="hide-on-small-only col s6 center orange"><i
+                                    class="large material-icons">beach_access</i></div>
+                        </div>
+                        <div class="row blue">
+                            <div class="col s6"><span class="flow-text white-text">class="hide-on-small-and-down" [<
+                                    600px]</span>
+                            </div>
+                            <div class="hide-on-small-and-down col s6 center pink"><i class="large material-icons">cake</i>
+                            </div>
+                        </div>
+                        <div class="row blue">
+                            <div class="col s6"><span class="flow-text white-text">class="hide-on-med-and-down" [<992px] </span>
+                            </div>
+                            <div class="hide-on-med-and-down col s6 center yellow"><i class="large material-icons">android</i>
+                            </div>
+                        </div>
+                        <div class="row blue">
+                            <div class="col s6"><span class="flow-text white-text">class="hide-on-med-only" [>600px & <992px]
+                                </span>
+                            </div>
+                            <div class="hide-on-med-only col s6 center red"><i class="large material-icons">child_friendly</i>
+                            </div>
+                        </div>
+                        <div class="row blue">
+                            <div class="col s6"><span class="flow-text white-text">class="hide-on-med-and-up" [>600px] </span>
+                            </div>
+                            <div class="hide-on-med-and-up col s6 center  lime accent-3"><i
+                                    class="large material-icons">directions_bike</i></div>
+                        </div>
+                        <div class="row blue">
+                            <div class="col s6"><span class="flow-text white-text">class="hide-on-extra-large-only"
+                                    [>992px]</span></div>
+                            <div class="hide-on-extra-large-only col s6 center amber"><i class="large material-icons">adb</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="cls_3" class="card-panel">
+                <h4>Tamanhos de Tela</h4>
+                <div class="container">
+                    <p>
+                        O Materialize dispõe classes para controlar o alinhamento conforme o tamanho da tela.
+                        Considerando a largura total(width) de um elemento 'pai' por linha(row) (container, por exemplo)
+                        dividida por doze partes iguais(colunas),
+                        cada parte pode marcar uma posição para outros elementos 'filhos' (buttons, cards, entre outros)
+                        que a preencherão.
+                    </p>
+                    <div>
+                        <div class="row center-align">
+                            <div class="row card col s12 m6 l3">
+                                <p class="col s12">.s</p>
+                                <p class="col s12">
+                                    <= 600px </p>
+                            </div>
+                            <div class="row card col s12 m6 l3">
+                                <p class="col s12">.m</p>
+                                <p class="col s12"> > 600px </p>
+                            </div>
+                            <div class="row card col s12 m6 l3">
+                                <p class="col s12">.l</p>
+                                <p class="col s12"> > 992px </p>
+                            </div>
+                            <div class="row card col s12 m6 l3">
+                                <p class="col s12">.xl</p>
+                                <p class="col s12"> 1200px </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 vertical_align blue white-text center">
+                            <p>class="col s12" Sempre com largura total</p>
+                        </div>
+
+                        <div class="row">
+                            <p class="col s12 m4 l3 xl6 green center white-text vertical_align">s12 m4 l3 xl2</p>
+                            <p class="col s12 m4 l3 xl2 orange darken-2 white-text center vertical_align">s12 m4 l3 xl4</p>
+                            <p class="col s12 m4 l3 xl2 green center white-text vertical_align">s12 m4 l3 xl2"</p>
+                            <p class="col s12 m12 l3 xl2 orange darken-2 white-text center vertical_align">s12 m6 l3 xl4</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="cls_4" class="card-panel">
+                <h4>Cards</h4>
+                <div class="container">
+                    <p>A classe 'Card' formata a apresentação semelhante a um cartão.</p>
+                    <p>Nesse caso, foi utilizada para conter as informações do conteúdo principal, 
+                        entre imagens e textos.</p>
+                    <p>A estrutura básica em CSS têm os seguintes atributos:</p>
+                    <div id="exemplo" class="amber lighten-5 card-panel code_text">
+                        <p>.card {</p>
+                        <p class="right"><img src="resources/img/css_3.png" alt="Código CSS:" /></p>
+                        <p class="indent_3">position: relative;</p>
+                        <p class="indent_3"> margin: 0.5rem 0 1rem 0;</p>
+                        <p class="indent_3">background-color: #fff;</p>
+                        <p class="indent_3">-webkit-transition: -webkit-box-shadow .25s;</p>
+                        <p class="indent_3">-webkit-box-shadow .25s;</p>
+                        <p class="indent_3">-transition: box-shadow .25s;</p>
+                        <p class="indent_3">transition: box-shadow .25s, -webkit-box-shadow .25s;</p>
+                        <p class="indent_3">border-radius: 2px;</p>
+                        <p class="indent_1">}</p>
+                        <p class="grey-text center"><i>Essas informações estão em um card</i></p>
+                    </div>
+                </div>
+            </div>  
+            <div id="cls_5" class="card-panel">
+                <h4>Sidenav</h4>
+                <div class="container">
+                    <p class="card-panel amber lighten-5">
+                        A classe Sidenav inclui uma barra de navagação lateral recolhível, 
+                        interessante para utilização em telas pequenas por não concorrer espaço
+                        com o conteúdo enquanto o usuário não precisar dela.
+                    </p>
+                </div>
+                <div class="sidenav-trigger btn-floating waves-effect waves-light vertical_align" data-target="slide-out" style="height: 80px; width: 80px;">
+                    Abrir
+                </div>
+            </div>                     
+        </section>
+        <footer class="page-footer">
+            <div class="center">
+                <i class="material-icons">copyright</i>
+                FATEC Lins - Análise e Desenvolvimento de Sistemas - Programação WEB - Ricardo de Moraes Gonçalves.
+            </div>
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="resources/materialize_css/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.sidenav').sidenav();
+            });
+
+            $(document).ready(function () {
+                $('.tooltipped').tooltip();
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Invasão Ovni - Jogos Web</title>
+        <script src="js/gameengine.js"></script>
+    </head>
+    <body>
+        <canvas id="cenaJogo" width="500" height="500"></canvas>
+        <script>
+            var canvas = document.getElementById("cenaJogo");
+            var ctx = canvas.getContext("2d");
+            var imagens, animacao, teclado, colisor, nave;
+            var fundoEspaco, fundoEstrela, fundoNuvens;
+            var totalImagens = 0, imagensCarregadas = 0;
+
+            carregarImagens();
+
+            function carregarImagens() {
+                imagens = {
+                    espaco: "fundo-espaco.png",
+                    estrelas: "fundo-estrelas.png",
+                    nuvens: "fundo-nuvens.png",
+                    nave: "nave-spritesheet.png",
+                    ovni: "ovni.png",
+                    explosao: "explosao.png"
+                };
+
+                for (var i in imagens) {
+                    var img = new Image();
+                    img.src = "img/" + imagens[i];
+                    img.onload = carregando;
+                    totalImagens++;
+                    imagens[i] = img;
+                }
+            }
+
+            function carregando() {
+                imagensCarregadas++;
+                if (imagensCarregadas === totalImagens)
+                    iniciarObjetos();
+            }
+
+            function iniciarObjetos() {
+                fundoEspaco =
+                        new Parallax(ctx, imagens.espaco);
+                fundoEstrela =
+                        new Parallax(ctx, imagens.estrelas);
+                fundoNuvens =
+                        new Parallax(ctx, imagens.nuvens);
+
+                teclado = new Teclado(document);
+                nave = new Nave(ctx, teclado, imagens.nave);
+
+                animacao = new Animacao(ctx);
+                animacao.novoSprite(fundoEspaco);
+                animacao.novoSprite(fundoEstrela);
+                animacao.novoSprite(fundoNuvens);
+                animacao.novoSprite(nave);
+                colisor = new Colisor();
+                colisor.novoSprite(nave);
+                animacao.novoProcessamento(colisor);
+                configuracoesIniciais();
+            }
+
+            function configuracoesIniciais() {
+                fundoEspaco.velocidade = 5;
+                fundoEstrela.velocidade = 7;
+                fundoNuvens.velocidade = 10;
+                nave.x = canvas.width / 2 -
+                        (imagens.nave.width / 2) / 2;
+                nave.y = canvas.height -
+                        (imagens.nave.height / 2);
+                nave.velocidade = 5;
+
+                teclado.disparar(ESPACO, function () {
+                    nave.atirar();
+                });
+
+                animacao.ligar();
+                criarInimigos();
+            }
+
+            function criarInimigos() {
+                criadorInimigos = {
+                    ultimoOvni: new Date().getTime(),
+                    processar: function () {
+                        var agora = new Date().getTime();
+                        var decorrido = agora - this.ultimoOvni;
+                        if (decorrido > 1000) {
+                            criarOvni();
+                            this.ultimoOvni = agora;
+                        }
+                    }
+                };
+                animacao.novoProcessamento(criadorInimigos);
+            }
+
+            function criarOvni() {
+                var ovni = new Inimigo(this.ctx,
+                        this.imagens.ovni,
+                        this.imagens.explosao);
+                ovni.definirVelocidade(5, 20);
+                ovni.posicionarTela();
+                this.animacao.novoSprite(ovni);
+                this.colisor.novoSprite(ovni);
+            }
+        </script>
+    </body>
+</html>

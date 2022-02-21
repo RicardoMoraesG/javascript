@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDom - Listener</title>
+    <style>
+        div#area{
+            font:normal 18pt arial;
+            background: rgb(42, 139, 142);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align:center;
+        }
+        .entrar{
+            background: yellowgreen;
+
+        }
+    </style>
+
+</head>
+<body>
+    <div id="area">
+    Interaja..
+    </div>
+
+
+    <script>
+        var a = window.document.getElementById('area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout',sair)
+        
+        function clicar(){ a.innerText ='Clicou!'
+            a.style.background = 'black'
+            a.innerText = 'tchan!'
+        }
+        function entrar() { a.innerText= 'Entrou!'
+            a.style.background = 'blue'
+            a.innerText = 'olá!'
+        }
+        function sair() { a.innerText = 'saiu..'
+            a.style.background = 'rgb(42, 139, 142)'
+            a.innerText = 'bye, bye..'
+        }
+    </script>
+</body>
+</html>

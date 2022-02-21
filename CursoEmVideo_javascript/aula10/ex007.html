@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Numeros</title>
+    <!--Todo estilo está separado do HTML-->
+    <link rel="stylesheet" href="ex007.css">
+</head>
+
+<body>
+    <div class="conta">
+        <h1>Somando valores</h1>
+        <!--cria uma caixa de texto tipada na tela-->
+        <input type="number" name="soma_txt1" id="soma_txt1">
+        +
+        <input type="number" name="soma_txt2" id="soma_txt2">
+        <input class="botao" type="button" value="Somar" onclick="somar()">
+        <div class="resultado" id="soma_res">Resultado </div>
+    </div>
+    <div class="conta">
+        <h1>Subtraindo valores</h1>
+        <!--cria uma caixa de texto tipada na tela-->
+        <input type="number" name="sub_txt1" id="sub_txt1">
+        -
+        <input type="number" name="sub_txt2" id="sub_txt2">
+        <input class="botao" type="button" value="Subtrair" onclick="subtrair()">
+        <div class="resultado" id="sub_res">Resultado </div>
+    </div>
+    <div class="conta">
+        <h1>Multiplicando</h1>
+        <input type="number" name="x_txt1" id="x_txt1">
+        x
+        <input type="number" name="x_txt2" id="x_txt2">
+        <input class="botao" type="button" value="Multiplicar" onclick="multiplicar()">
+        <div class="resultado" id="x_res">Resultado</div>
+    </div>
+
+    <!-- TODA A INTERAÇÃO É CRIADA COM O JS: separei o JS do HTML -->
+    <script src="ex007.js"></script>
+</body>
+
+</html>
